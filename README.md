@@ -1,3 +1,3 @@
 # SOLID
 
-##Integrantes: Daniel Pareja, Juan Felipe Gomez
+Integrantes: Daniel Pareja, Juan Felipe Gomez
