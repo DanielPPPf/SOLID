@@ -1,8 +1,8 @@
 package SOLID;
 
 public class PartTimeEmployee extends Employee {
-    @Override
-    public String getName() {
-        throw new UnsupportedOperationException();
+
+    public PartTimeEmployee(String name, String department) {
+        super(name, department);
     }
 }
