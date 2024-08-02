@@ -2,8 +2,13 @@ package SOLID;
 
 public class Employee {
 
-    String name;
-    String departament;
+    private String name;
+    private String departament;
+
+    public Employee(String name, String departament) {
+    this.name = name;
+    this.departament = departament;
+    }
 
     public String getName() {
         return name;

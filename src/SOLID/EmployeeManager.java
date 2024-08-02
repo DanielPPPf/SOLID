@@ -1,21 +1,29 @@
 package SOLID;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmployeeManager implements EmployeeOperations {
 
-    public void addEmployee(String name) {
-        // Agregar empleado
-    }
+    private List<Employee> employees = new ArrayList<>();
 
+    public void addEmployee(String name, String department) {
+        employees.add(new Employee(name, department));
+    }
+ 
     public void removeEmployee(String name) {
-        // Eliminar empleado
-    }
-
-    public double calculateSalary(String name) {
-        // Calcular salario
-        return 0.0;
+        employees.removeIf(employee -> employee.getName().equals(name));
     }
 
     public void saveToFile(String name) {
-        // Guardar en archivo
+    }
+
+    public Employee getEmployee(String name) {
+        for (Employee employee : employees) {
+            if (employee.getName().equals(name)) {
+                return employee;
+            }
+        }
+        return null;
     }
 }

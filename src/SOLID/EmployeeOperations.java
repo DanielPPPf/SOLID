@@ -1,11 +1,7 @@
 package SOLID;
 
 public interface EmployeeOperations {
-    void addEmployee(String name);
-
+    void addEmployee(String name, String departament);
     void removeEmployee(String name);
-
-    double calculateSalary(String name);
-
-    void saveToFile(String name);
+    Employee getEmployee(String name);
 }
