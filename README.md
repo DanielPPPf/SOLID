@@ -3,9 +3,9 @@
 Integrantes: Daniel Pareja, Juan Felipe Gomez
 
 
-Errores o violaciones al principio SOLID encontrados enlas clases:
+Errores o violaciones al principio SOLID encontrados en las clases:
 
-Los errores documentados a continuación fueron listados e identificados por clase/interfaz
+Los errores documentados a continuación fueron listados e identificados por clase/interfaz de la carpeta original: https://github.com/dani-saavedra/diplomado2024-2/tree/main/src/main/java/com/example/demo/unsolid
 
 Employee.java
 
@@ -32,5 +32,5 @@ SalaryCalculator.java
 
 La clase SalaryCalculator depende directamente de EmployeeManager violando el principio de inversión de dependencias. Este principio establece que las clases deben depender de abstracciones, no de implementaciones concretas.
 
-
+5 profe? 🙏
 
