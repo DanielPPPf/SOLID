@@ -1,8 +1,7 @@
 package SOLID;
 
 public class PartTimeEmployee extends Employee {
-
-    public PartTimeEmployee(String name, String department) {
-        super(name, department);
+    public PartTimeEmployee(String name, String departament) {
+        super(name, departament);
     }
 }

@@ -1,8 +1,11 @@
 package SOLID;
 
-public class SalaryCalculator {
+public class SalaryCalculator implements Salario {
 
-    public double calculateSalary(Employee employee) {
+    @Override
+    public double calcularSalario(String name) {
+
+        //Lógica de calcular salarios bla bla bla
         return 0.0;
     }
 }

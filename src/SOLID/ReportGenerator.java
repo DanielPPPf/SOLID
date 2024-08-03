@@ -2,11 +2,12 @@ package SOLID;
 
 public class ReportGenerator {
 
-    public void generateReportExcel(EmployeeManager employeeManager) {
-        // Generar reporte
+    private Reporte reporte;
+    public  ReportGenerator(Reporte reporte) {
+        this.reporte=reporte;
     }
 
-    public void generateReportPDF(EmployeeManager employeeManager) {
-        // Generar reporte
+    public void generateReport(EmployeeManager employeeManager) {
+        reporte.generarReporte(employeeManager);
     }
 }

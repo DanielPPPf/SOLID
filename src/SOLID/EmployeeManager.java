@@ -15,9 +15,6 @@ public class EmployeeManager implements EmployeeOperations {
         employees.removeIf(employee -> employee.getName().equals(name));
     }
 
-    public void saveToFile(String name) {
-    }
-
     public Employee getEmployee(String name) {
         for (Employee employee : employees) {
             if (employee.getName().equals(name)) {
