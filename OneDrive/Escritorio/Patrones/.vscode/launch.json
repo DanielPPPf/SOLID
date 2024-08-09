@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Problema3.Main",
+            "projectName": "Patrones_1c47904f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Problema_3.Main",
+            "projectName": "TuProyecto"
+        }
+    ]
+}
