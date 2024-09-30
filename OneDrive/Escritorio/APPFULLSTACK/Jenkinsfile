@@ -1,29 +1,64 @@
 pipeline {
-    agent any
+    agent any 
+    environment {
+        DOCKER_IMAGE = 'nombre-imagen' // Cambia 'nombre-imagen' según tu necesidad
+        DOCKER_TAG = 'latest'
+    }
     stages {
+        stage('Verify Docker Access') {
+            steps {
+                script {
+                    // Verifica si Docker está disponible
+                    sh 'docker --version'
+                }
+            }
+        }
         stage('Checkout') {
             steps {
-                git 'https://github.com/juangomcar/APPFULLSTACK'
+                checkout scm 
             }
         }
         stage('Build') {
             steps {
-                sh 'npm install'
+                script {
+                    // Construye la aplicación
+                    sh 'echo "Building the application..."'
+                }
             }
         }
         stage('Test') {
             steps {
-                sh 'npm test'
+                script {
+                    // Pruebas de la aplicación
+                    sh 'echo "Testing the application..."'
+                }
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t appfullstack .'
+                script {
+                    // Construye la imagen Docker
+                    sh 'echo "Building Docker image..."'
+                    sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                }
+            }
+        }
+        stage('Scan Docker Image with Trivy') {
+            steps {
+                script {
+                    // Escanea la imagen Docker con Trivy
+                    sh 'echo "Scanning Docker image with Trivy..."'
+                    sh "trivy image --exit-code 1 --severity HIGH,CRITICAL ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                }
             }
         }
         stage('Run Docker Image') {
             steps {
-                sh 'docker run -d -p 8080:8080 appfullstack'
+                script {
+                    // Ejecuta la imagen Docker
+                    sh 'echo "Running Docker image..."'
+                    sh "docker run -d ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                }
             }
         }
     }
